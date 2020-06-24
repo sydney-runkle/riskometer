@@ -6,16 +6,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}
     zoomOffset: -1,
 }).addTo(myMap);
 
-/*var NCcountyLines = 'https://opendata.arcgis.com/datasets/d192da4d0ac249fa9584109b1d626286_0.geojson'*/
-
-
-/*fetch(
-    NCcountyLines
-).then(
-    res => res.json()
-).then(
-    data => L.geoJSON(data).addTo(myMap)
-)*/
 
 var proxyURL = 'https://cors-anywhere.herokuapp.com/'
 var USCountyLines = 'https://eric.clst.org/assets/wiki/uploads/Stuff/gz_2010_us_050_00_5m.json'
@@ -64,3 +54,13 @@ fetch(
 ).catch(
     error => console.log(error)
 )
+
+/*var NCcountyLines = 'https://opendata.arcgis.com/datasets/d192da4d0ac249fa9584109b1d626286_0.geojson'*/
+
+/*fetch(
+    NCcountyLines
+).then(
+    res => res.json()
+).then(
+    data => L.geoJSON(data).addTo(myMap)
+)*/
