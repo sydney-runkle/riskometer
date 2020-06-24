@@ -90,9 +90,17 @@ class TestingWindow(Resource):
 
         return 'I am working!', 200
 
+class FIPSInfo(Resource):
+
+    def get(self, FIPS):
+        info = fetchTwoWeekInformation(FIPS)
+        return info, 200
+
+
 
 api.add_resource(CountyInfo, "/county-info", "/county-info/", "/county-info/departure=<string:departure>/destination=<string:destination>")
 api.add_resource(TestingWindow, '/testing', '/testing/')
+api.add_resource(FIPSInfo, '/FIPS/<int:FIPS>')
 
 if __name__ == '__main__':
     app.run(debug=True)
