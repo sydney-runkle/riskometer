@@ -4,5 +4,4 @@ gunicorn
 pandas
 matplotlib
 numpy
-json
 requests
