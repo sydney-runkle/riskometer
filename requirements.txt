@@ -1,8 +1,6 @@
 flask
 flask-restful
 gunicorn
-random
-datetime
 pandas
 matplotlib
 numpy
