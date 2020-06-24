@@ -98,6 +98,7 @@ class FIPSInfo(Resource):
 
 
 
+
 api.add_resource(CountyInfo, "/county-info", "/county-info/", "/county-info/departure=<string:departure>/destination=<string:destination>")
 api.add_resource(TestingWindow, '/testing', '/testing/')
 api.add_resource(FIPSInfo, '/FIPS/<int:FIPS>')
