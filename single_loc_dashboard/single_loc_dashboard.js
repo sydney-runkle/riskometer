@@ -1,6 +1,6 @@
 var userLoc, userCoords, userState, myMap;
 var userLocInput = window.prompt('Please enter your location', 'San Francisco')
-if (userLocInput === null || userLocInput === "") {
+if (userLocInput == null || userLocInput == "") {
   console.log("User cancelled the prompt.")
 } else {
     userLoc = userLocInput;
@@ -34,7 +34,7 @@ function createMap() {
         tileSize: 512,
         zoomOffset: -1,
     }).addTo(myMap);
-    
+
     fetch(
         proxyURL+USCountyLines
     ).then(
@@ -62,7 +62,7 @@ function onEachFeature(feature, layer) {
     if (feature.properties && feature.properties.NAME && feature.properties.STATE && feature.properties.COUNTY) {
         var popupContent = '<p>County Name: ' + feature.properties.NAME + ' County' + '<br></br>' + 'FIPS: ' + feature.properties.STATE + feature.properties.COUNTY + '</p>'
         layer.bindPopup(popupContent);
-        
+
         if(feature.properties.STATE === userState) {
             layer.options.fillColor = '#b51238'
         }

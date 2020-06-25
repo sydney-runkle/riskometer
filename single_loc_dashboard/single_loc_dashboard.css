@@ -1,0 +1,13 @@
+
+#bottom-navbar {
+    background-color: #00217b;
+}
+
+#map {
+    width: 100%;
+    height: 45vh;
+}
+
+.col-sm {
+    padding: 10px;
+}
