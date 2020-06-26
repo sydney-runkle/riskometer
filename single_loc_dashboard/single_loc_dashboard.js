@@ -30,10 +30,22 @@ function createMap() {
     var myMap = L.map('map').setView([userCoords['lat'],userCoords['lng']], 7);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png', {
-        maxZoom: 18,
+        maxZoom: 6,
         tileSize: 512,
         zoomOffset: -1,
     }).addTo(myMap);
+
+    //Adds a scale in the bottom left that shows the maps current scale in metric and imperial units
+    L.control.scale().addTo(myMap);
+    //Creates a search bar using Leaflet Esri
+    var searchControl = new L.esri.Controls.Geosearch().addTo(myMap);
+    var results = L.layerGroup().addTo(myMap);
+    //Searches map and zooms in on location
+    searchControl.on('results', function(data){ //results is an event fired when search is completed
+        for (var i = data.results.length - 1; i >= 0; i--) {
+            myMap.setView(data.results[i].latlng, 6);
+    }
+  });
 
     fetch(
         proxyURL+USCountyLines
